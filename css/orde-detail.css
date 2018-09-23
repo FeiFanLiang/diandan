@@ -1,0 +1,142 @@
+/* 订单详情页 */
+.order-main{
+    box-sizing: border-box;
+    height: 100%;
+    color: #000;
+    padding: 62px 15px 12px;
+    background-color: #edeae8;
+}
+.number-plate{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #50321f;
+}
+.number-plate>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    width: 45%;
+    height: 40px;
+    
+}
+
+.orider-list-wrap,.number-plate>div{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow:0px 2px 5px 1px #949393;
+}
+.plate-title{
+    color: #9b9b9b;
+}
+.dish-des{
+    color: #50321f;
+}
+.orider-list-wrap ul li{
+    
+    padding: 0 30px;
+}
+.orider-list-wrap .list-item{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-bottom: 1px solid #e5e5e5;
+
+}
+.list-left>div{
+    color: #50321f;
+}
+.list-item .dish-name{
+    font-size: 15px;
+}
+.list-item .item-right {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+.item-count{
+    margin-right: 18px;
+}
+.total-price-wrap{
+    display: flex;
+    justify-content: flex-end;
+    padding: 23px 30px;
+    font-size: 14px;
+}
+.total-price{
+    margin-left: 18px;
+}
+
+/* 键盘样式 */
+.layer-content {
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    box-shadow: 0px -2px 4px #dedede;
+    z-index: 1000;
+    display: none;
+    
+}
+.form_edit {
+    width: 100%;
+    background: #ececec;
+}
+
+.form_edit> div {
+    margin-bottom: 1px;
+    margin-right: 1px;
+    float: left;
+    width: 33%;
+    height: 50px;
+    text-align: center;
+    color: #333;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #fff;
+    
+}
+.del-key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.del-icon{
+    width: 40px;
+    height: 24px;
+    background-image: url('../images/del@2x.png');
+}
+.form_edit .submit-key{
+    color: #50321f;
+}
+.form_edit> div:nth-child(3n) {
+    margin-right: 0;
+}
+.inputAnimate::after {
+content:'';
+display: block;
+width:1px;
+height:16px;
+animation: blink 1s infinite steps(1, start);
+
+}
+
+@keyframes blink {
+0%{
+background-color: white;
+}
+50% {
+background-color: black;
+}
+100% {
+background-color: white;
+}
+}

@@ -1,0 +1,133 @@
+
+/* 菜品详情页样式 */
+.menu-nav{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.header-nav .menu-logo{
+    font-size: 16px;
+    /* margin: 0 auto; */
+}
+
+.back-btn{
+    position: absolute;
+    left: 6.25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+   
+}
+.lager-img::after{
+    content: '';
+    display: block;
+    padding-top:64%;
+}
+.lager-img {
+    background: url('../images/WechatIMG1@2x.png');
+    background-size: cover;
+}
+.main{
+    height: 100%;  
+}
+.dish-info-wrap{
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 50px;
+    background: url('../images/WechatIMG783@2x.png');
+    background-size:cover;
+}
+.main-container{
+    color: #50321f;
+    padding: 20px 15px 60px 15px;
+}
+.main-container>div{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow:0px 2px 5px 1px #949393;
+}
+
+.order-detail{
+    display: flex;
+    justify-content: space-between;
+    height: 78px;
+    padding: 0 25px 0 30px;
+    margin-bottom: 20px;
+}
+.demand-title{
+    font-size: 14px;
+}
+.dish-describle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.price-describle{
+    display: flex;
+    align-items: center;
+}
+.dish-name{
+    font-size: 17px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+.dish-nameEn{
+    font-size: 12px;
+    font-weight: 900;
+}
+.dish-price{
+    font-size: 13px;
+    font-weight: 500; 
+}
+.subadd-btn,.add-btn{
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 57%;
+    background-position: 50% 50%;
+}
+.subadd-btn {
+    border: 1px solid #50321f;
+   
+    background-image: url('../images/subadd.png');
+}
+.add-btn {
+    background-color: #50321f;
+    background-image: url('../images/w-add.png');
+   
+}
+.order{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 78px;
+
+}
+.num{
+    font-size: 13px;
+    font-weight: 500;
+}
+.order-demand{
+    display: flex;
+    flex-direction: column;
+    min-height: 145px;
+    padding: 14px 20px;
+    color: #9b9b9b;
+}
+.demand-describe{
+    flex-grow:1;
+}
+.demand-text{
+    display: block;
+    border: 0;
+    outline:none;
+    width: 100%;
+    resize:none
+}
+

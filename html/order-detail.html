@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/orde-detail.css">
+    <script src="../js/jquery.min.js"></script>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <header class="header-nav">
+        <div class="header-wrap">
+            <div class="menu-nav">
+                <div class="back-btn" id="order_back">
+                    <i class="nav-back-arrow icon"></i>
+                    <span>返回</span>
+                </div>
+                <div class="menu-logo icon">结账页面</div>
+            </div>
+        </div>
+    </header>
+    <!-- 内容区域 -->
+    <section class="order-main">
+        <div class="number-plate">
+            <div class="plate-title">手牌号</div>
+            <div class="plate-number" id="num_input">101</div>
+        </div>
+        <!-- 商品列表 -->
+        <div class="orider-list-wrap">
+            <ul>
+                <li>
+                    <div class="list-item">
+                        <div class="item-left">
+                            <span class="dish-name">树莓</span>
+                            <div class="dish-des">¥
+                                <span class="dish-price">20</span> / 份</div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-count">X
+                                <span class="order-count">2</span>
+                            </div>
+                            <div>¥
+                                <span class="dish-total">40</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-item">
+                        <div class="item-left">
+                            <span class="dish-name">烤牛排</span>
+                            <div class="dish-des">¥
+                                <span class="dish-price">20</span> / 份</div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-count">X
+                                <span class="order-count">2</span>
+                            </div>
+                            <div>¥
+                                <span class="dish-total">40</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="list-item">
+                        <div class="item-left">
+                            <span class="dish-name">帝王蟹</span>
+                            <div class="dish-des">¥
+                                <span class="dish-price">20</span> / 份</div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-count">X
+                                <span class="order-count">2</span>
+                            </div>
+                            <div>¥
+                                <span class="dish-total">40</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="total-price-wrap">
+                <div>合计:
+                    <span class="total-price">¥
+                        <i class="price-num">110</i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-btn">
+            <div class="change-btn">
+                <a href="javascript:void(0)" id="change_btn">修改</a>
+            </div>
+            <div class="confirm-btn">
+                <a href="javascript:void(0)" id="submit_btn">提交订单</a>
+            </div>
+        </div>
+    </footer>
+    <!-- 模拟键盘 -->
+    <div class="layer-content">
+        <div class="form_edit clearfix">
+            <div class="num">1</div>
+            <div class="num">2</div>
+            <div class="num">3</div>
+            <div class="num">4</div>
+            <div class="num">5</div>
+            <div class="num">6</div>
+            <div class="num">7</div>
+            <div class="num">8</div>
+            <div class="num">9</div>
+            <div class="del-key">
+                <i class="del-icon icon"></i>
+            </div>
+            <div class="num">0</div>
+            <div class="submit-key" id="submit_key">确认</div>
+        </div>
+    </div>
+</body>
+<script>
+    $(function () {
+        $('#order_back,#change-btn').on('click', function () {
+            window.history.go(-1)
+        })
+
+        $('#submit_btn').on('click', function () {
+            window.location.href = './complete.html'
+        })
+        
+        $('#num_input').on('click', function () {
+            $('.layer-content').show();
+            $(this).addClass('inputAnimate')
+        })
+
+        $('.form_edit .num').click(function () {
+            var Newvalue = $('#num_input').text() + $(this).text()
+            $('#num_input').text(Newvalue)
+        })
+        $('.del-key').click(function () {
+            var value = $('#num_input').text()
+            $('#num_input').text(value.substring(0, value.length - 1))
+        })
+        $('#submit_key').on('click', function () {
+            $('.layer-content').hide()
+            $('#num_input').removeClass('inputAnimate')
+        })
+    })
+</script>
+
+</html>

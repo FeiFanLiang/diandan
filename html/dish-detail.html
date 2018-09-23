@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>详情页面</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/detail.css">
+    <script src="../js/jquery.min.js"></script>
+</head>
+
+<body>
+    <header class="header-nav">
+        <div class="header-wrap">
+            <div class="menu-container menu-nav">
+                <div class="back-btn" id="dish_back">
+                    <i class="nav-back-arrow icon"></i>
+                    <span>返回</span>
+                </div>
+                <div class="menu-logo icon">商品详情</div>
+            </div>
+        </div>
+    </header>
+    <!-- 内容区域 -->
+    <section class="main">
+        <div class="dish-info-wrap">
+            <div class="lager-img">
+
+            </div>
+            <div class="main-container">
+                <div class="order-detail">
+                    <div class="dish-describle">
+                        <div class="price-describle">
+                            <span class="dish-name">树莓</span>
+                            <span class="dish-price">
+                                ¥
+                                <span>20</span> / 份
+                            </span>
+                        </div>
+                        <div>
+                            <span class="dish-nameEn">SHUMEI</span>
+                        </div>
+                    </div>
+                    <div class="order">
+                        <span class="subadd-btn" id="subadd_btn"></span>
+                        <span class="num" id="submit_num">1</span>
+                        <span class="add-btn" id="add_btn"></span>
+                    </div>
+                </div>
+                <div class="order-demand" id="order_demand">
+                    <div class="demand-title">菜品要求:</div>
+                    <div class="demand-describe">
+                        <textarea class="demand-text" name="demand-input" id="demand_input"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- 页脚 -->
+    <footer class="common-footer">
+        <div class="footer-btn">
+
+            <div class="change-btn">
+                <a href="javascript:void(0)" id="change_btn">修改</a>
+            </div>
+            <div class="confirm-btn">
+                <a href="javascript:void(0)" id="confirm_btn">确认</a>
+            </div>
+
+        </div>
+    </footer>
+</body>
+<script>
+    $(function () {
+
+
+        $('#dish_back,#change_btn').on('click', function () {
+            window.location.href = './index.html'
+        });
+        $('#confirm_btn').on('click', function () {
+            window.location.href = './order-detail.html'
+        })
+        $('#order_demand').click(function () {
+            $('#demand_input').focus()
+        })
+        $('textarea').each(function () {
+            this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
+        }).on('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        })
+
+        $('#subadd_btn,#add_btn').on('click', function (e) {
+
+            var num = Number($('#submit_num').text())
+            if (e.target.id == 'subadd_btn' && num >= 1) {
+                num--
+            } else if (e.target.id == 'add_btn') {
+                num++
+            }
+
+            $('#submit_num').text(num)
+        })
+
+
+    })
+</script>
+
+</html>
