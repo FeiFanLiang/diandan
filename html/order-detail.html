@@ -31,8 +31,8 @@
     <!-- 内容区域 -->
     <section class="order-main">
         <div class="number-plate">
-            <div class="plate-title">手牌号</div>
-            <div class="plate-number" id="num_input">101</div>
+            <div class="plate-title" id="own-number">手牌号</div>
+            <div class="plate-number">101</div>
         </div>
         <!-- 商品列表 -->
         <div class="orider-list-wrap">
@@ -139,22 +139,28 @@
             window.location.href = './complete.html'
         })
         
-        $('#num_input').on('click', function () {
+        $('#own-number').on('click', function () {
             $('.layer-content').show();
-            $(this).addClass('inputAnimate')
+            $('#own-number').addClass('inputAnimate')
+						if(isNaN(Number($(this).text()))){
+							$(this).text('')
+						}
         })
 
         $('.form_edit .num').click(function () {
-            var Newvalue = $('#num_input').text() + $(this).text()
-            $('#num_input').text(Newvalue)
+            var Newvalue = $('#own-number').text() + $(this).text()
+            $('#own-number').text(Newvalue)
         })
         $('.del-key').click(function () {
-            var value = $('#num_input').text()
-            $('#num_input').text(value.substring(0, value.length - 1))
+            var value = $('#own-number').text()
+            $('#own-number').text(value.substring(0, value.length - 1))
         })
         $('#submit_key').on('click', function () {
             $('.layer-content').hide()
-            $('#num_input').removeClass('inputAnimate')
+            $('#own-number').removeClass('inputAnimate')
+						if($('#own-number').text() == ''){
+							$('#own-number').text('手牌号')
+						}
         })
     })
 </script>
