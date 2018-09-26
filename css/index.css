@@ -1,10 +1,16 @@
 /* 主页样式 */
-.top-wrap{
-   
+.top-container{
     height: 125px;
+}
+.top-wrap{
+    position: fixed;
+    top: 0;
+    height: 125px;
+    width: 100%;
     background-image: url('../images/header-back@2x.png');
     background-size: cover;
-  
+    z-index: 10;
+    background-color: #fff;
 }
 .menu-wrap{
     display: flex;
@@ -144,6 +150,9 @@
     margin-bottom: 10px;
     margin-right: 6%;
    }
+.dish-item a {
+    height: auto;
+}
 .dish-item:nth-child(2n){
     margin-right: 0px;
 }
@@ -190,11 +199,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 54px;
+    width: 40px;
     height: 17px;
     background-color: #f8e71c;
     border-radius: 2px;
     margin: 0 auto;
+}
+.btnShow-container{
+    display: none;
+}
+.order-btn-show{
+    position: absolute;
+    top: 0px;
+    right: 7px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
 }
 .order-btn{
     position: absolute;
@@ -205,17 +226,33 @@
     justify-content: center;
     
 }
-.order-icon{
-    height: 17px;
-    width: 17px;
+.sub-order-icon,.order-icon{
+    box-sizing: border-box;
+    height: 16px;
+    width: 16px;
     border-radius: 50%;
-    background-color: #50321f;
-    background-image: url('../images/w-add.png');
     background-repeat: no-repeat;
     background-size: 57%;
     background-position: 50% 50%;
 }
-
+.order-icon{
+    background-color: #50321f;
+    background-image: url('../images/w-add.png');
+}
+.sub-order-icon{
+    border:1px solid #50321f;
+    background-color: #fff;
+    background-image: url('../images/subadd.png');
+}
+.order-btn-show .order-num{
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1px;
+    font-size: 13px;
+    font-weight: normal;
+}
 .cart-wrap{
     position: fixed;
     bottom: 0px;
@@ -272,11 +309,13 @@ footer{
     height: 100%;
     background-color: rgba(45, 44, 44, 0.85);
     transition: left 0.4s ease;
-    
+    z-index: 20;
+}
+.checked{
+    color: #dab706;
 }
 .active {
     left: 0;
-   
 }
 .aside-nav{
     padding-top: 118px;

@@ -1,4 +1,42 @@
 /* 订单详情页 */
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4%;
+    height: 50px;
+}
+.nav-back-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-container .confirm-btn a{
+    background-color: #fff;
+    color: #50321f;
+}
+.edit-icon{
+    height: 16px;
+    width: 16px;
+    background-image: url('../images/edit.png');
+}
+
+.item-left{
+    display: flex;
+    
+}
+.order-item{
+    position: relative;
+}
+.item-edit{
+    position: absolute;
+    top: 25px;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .order-main{
     box-sizing: border-box;
     height: 100%;
@@ -22,6 +60,7 @@
     height: 40px;
     
 }
+
 
 .orider-list-wrap,.number-plate>div{
     background-color: #fff;

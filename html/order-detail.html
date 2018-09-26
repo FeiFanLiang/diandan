@@ -11,20 +11,21 @@
     <link rel="stylesheet" type="text/css" href="../css/orde-detail.css">
     <script src="../js/jquery.min.js"></script>
     <style>
-
-
     </style>
 </head>
 
 <body>
     <header class="header-nav">
         <div class="header-wrap">
-            <div class="menu-nav">
-                <div class="back-btn" id="order_back">
+            <div class="nav-container">
+                <div class="nav-back-btn" id="order_back">
                     <i class="nav-back-arrow icon"></i>
                     <span>返回</span>
                 </div>
-                <div class="menu-logo icon">结账页面</div>
+                <div class="menu-logo icon">订单详情</div>
+                <div class="confirm-btn">
+                    <a href="javascript:void(0)" id="submit_btn">提交订单</a>
+                </div>
             </div>
         </div>
     </header>
@@ -37,12 +38,17 @@
         <!-- 商品列表 -->
         <div class="orider-list-wrap">
             <ul>
-                <li>
+                <li class="order-item">
+                    <div class="item-edit">
+                        <i class="edit-icon icon"></i>
+                    </div>
                     <div class="list-item">
                         <div class="item-left">
-                            <span class="dish-name">树莓</span>
-                            <div class="dish-des">¥
-                                <span class="dish-price">20</span> / 份</div>
+                            <div class="item-desc">
+                                <span class="dish-name">树莓</span>
+                                <div class="dish-des">¥
+                                    <span class="dish-price">20</span> / 份</div>
+                            </div>
                         </div>
                         <div class="item-right">
                             <div class="item-count">X
@@ -54,12 +60,17 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="order-item">
+                    <div class="item-edit">
+                        <i class="edit-icon icon"></i>
+                    </div>
                     <div class="list-item">
                         <div class="item-left">
-                            <span class="dish-name">烤牛排</span>
-                            <div class="dish-des">¥
-                                <span class="dish-price">20</span> / 份</div>
+                            <div class="item-desc">
+                                <span class="dish-name">树莓</span>
+                                <div class="dish-des">¥
+                                    <span class="dish-price">20</span> / 份</div>
+                            </div>
                         </div>
                         <div class="item-right">
                             <div class="item-count">X
@@ -71,12 +82,39 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="order-item">
+                    <div class="item-edit">
+                        <i class="edit-icon icon"></i>
+                    </div>
                     <div class="list-item">
                         <div class="item-left">
-                            <span class="dish-name">帝王蟹</span>
-                            <div class="dish-des">¥
-                                <span class="dish-price">20</span> / 份</div>
+                            <div class="item-desc">
+                                <span class="dish-name">树莓</span>
+                                <div class="dish-des">¥
+                                    <span class="dish-price">20</span> / 份</div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-count">X
+                                <span class="order-count">2</span>
+                            </div>
+                            <div>¥
+                                <span class="dish-total">40</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="order-item">
+                    <div class="item-edit">
+                        <i class="edit-icon icon"></i>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-left">
+                            <div class="item-desc">
+                                <span class="dish-name">树莓</span>
+                                <div class="dish-des">¥
+                                    <span class="dish-price">20</span> / 份</div>
+                            </div>
                         </div>
                         <div class="item-right">
                             <div class="item-count">X
@@ -100,14 +138,14 @@
     </section>
     <!-- 页脚 -->
     <footer>
-        <div class="footer-btn">
+        <!-- <div class="footer-btn">
             <div class="change-btn">
                 <a href="javascript:void(0)" id="change_btn">修改</a>
             </div>
             <div class="confirm-btn">
                 <a href="javascript:void(0)" id="submit_btn">提交订单</a>
             </div>
-        </div>
+        </div> -->
     </footer>
     <!-- 模拟键盘 -->
     <div class="layer-content">
@@ -138,13 +176,13 @@
         $('#submit_btn').on('click', function () {
             window.location.href = './complete.html'
         })
-        
+
         $('#own-number').on('click', function () {
             $('.layer-content').show();
             $('#own-number').addClass('inputAnimate')
-						if(isNaN(Number($(this).text()))){
-							$(this).text('')
-						}
+            if (isNaN(Number($(this).text()))) {
+                $(this).text('')
+            }
         })
 
         $('.form_edit .num').click(function () {
@@ -158,9 +196,9 @@
         $('#submit_key').on('click', function () {
             $('.layer-content').hide()
             $('#own-number').removeClass('inputAnimate')
-						if($('#own-number').text() == ''){
-							$('#own-number').text('手牌号')
-						}
+            if ($('#own-number').text() == '') {
+                $('#own-number').text('手牌号')
+            }
         })
     })
 </script>
